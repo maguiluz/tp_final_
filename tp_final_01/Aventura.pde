@@ -459,16 +459,18 @@ class Aventura {
 
     case 23:
       //Aqui va el jueguito
+      
+      
       juego.update();
       juego.dibujar();
 
       //Ganar / perder
-      /*if (juego.getJugador().getTermino()){
-        //println("entro al if para encontrar la pantalla");
+      if (juego.getJugador().getTermino()){ //<>//
+        println("entro al if para encontrar la pantalla");
         pantalla = 25;
-      }*/
+      }
       
-      if (juego.getJugador().getVidas() == 1){
+      if (juego.getJugador().getVidas() == 0){
         
         pantalla = 24;
       }
@@ -688,6 +690,7 @@ class Aventura {
       println("pantalla = 22");
       if (botonSig.mouseEstaEncima()) {
         pantalla = 23;
+        juego.getJugador().reciclarVar();
       }
       break;
     case 23:

@@ -24,9 +24,8 @@ class Dana {
     font2 = loadFont ("VCROSDMono-48.vlw");
 
     //Contador
-    begin = millis();
-    duracion = 15;
-    time = 30;
+    //begin = millis();
+    time = duracion = 20;
 
 
     moverDer = false;
@@ -54,6 +53,10 @@ class Dana {
 
   int getBegin() {
     return begin;
+  }
+  
+  void setBegin(int tiempo_) {
+    begin = tiempo_;
   }
 
   boolean getTermino() {
@@ -128,7 +131,7 @@ class Dana {
         //println("es para ver si entra al else");
         //println(g.getEstado());
         //g.cambiarEstado("ganar");
-        //reciclarVar();
+       // reciclarVar();
       }
     }
   }
@@ -147,9 +150,11 @@ class Dana {
 
 
   void reciclarVar () {
-    vidas = 3;
-    begin = millis();
+    vidas = 5;
     time = duracion = 20;
+    begin=millis();
+    termino=false;
+    
   }
 
   //COLISION
@@ -170,11 +175,11 @@ class Dana {
           println("COLISIÓN "+ vidas);
           fu[i].reciclar();
         }
-        if (vidas == 0) {
+        /*if (vidas == 0) {
           reciclarVar();
           //println ("PERDISTE");
           //fin.cambiarEstado("perder");
-        }
+        }*/
       }
     }
   }
